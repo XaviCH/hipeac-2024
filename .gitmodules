@@ -1,6 +1,6 @@
 [submodule "nvbitfi"]
 	path = nvbitfi
-	url = git@github.com:NVlabs/nvbitfi.git
+	url = https://github.com/NVlabs/nvbitfi.git
 [submodule "radiation-benchmarks"]
 	path = radiation-benchmarks
-	url = git@github.com:UFRGS-CAROL/radiation-benchmarks.git
+	url = https://github.com/UFRGS-CAROL/radiation-benchmarks.git
