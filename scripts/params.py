@@ -26,19 +26,14 @@
 
 import os, sys
 
-PYTHON_P = "python3"
+PYTHON_P = "python"
 
 TIMEOUT_THRESHOLD = 10 # 10X usual runtime 
 
-if 'PWD_HOME' not in os.environ:
-	print ("Error: Please set PWD_HOME environment variable")
-	sys.exit(-1)
-PWD_HOME = os.environ['PWD_HOME']
-
-if 'RADIATION_BENCHMARKS_HOME' not in os.environ:
-	print ("Error: Please set RADIATION_BENCHMARKS_HOME environment variable")
-	sys.exit(-1)
-RADIATION_BENCHMARKS_HOME = os.environ['RADIATION_BENCHMARKS_HOME']
+if 'RB_HOME' not in os.environ:
+        print ("Error: Please set RB_HOME environment variable")
+        sys.exit(-1)
+RB_HOME = os.environ['RB_HOME']
 
 if 'NVBITFI_HOME' not in os.environ:
 	print ("Error: Please set NVBITFI_HOME environment variable")
@@ -211,14 +206,15 @@ inst_value_igid_bfm_map = {
 # golden output files should also be in the workload directory
 #########################################################################
 apps = {
-	'bfs': [
-			RADIATION_BENCHMARKS_HOME + '/src/cuda/bfs', # workload directory
-			'bfs', # binary name
-			RADIATION_BENCHMARKS_HOME + '/src/cuda/bfs/', # path to the binary file
-			1, # expected runtime
-			"" # additional parameters to the run.sh
-		],
+    'bfs': [
+    	RB_HOME + '/src/cuda/bfs', # workload directory
+        'cudaBFS', # binary name
+        RB_HOME + '/src/cuda/bfs', # path to the binary file
+        1, # expected runtime
+        "" # additional parameters to the run.sh
+        ],
 }
+
 
 #########################################################################
 # Separate list of apps and error models for parsing because one may want to
