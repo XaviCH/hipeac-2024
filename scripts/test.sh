@@ -71,7 +71,9 @@ cd $CWD
 ###############################################################################
 printf "\nStep 0 (4): Run and collect output without instrumentation\n"
 cd $RB_HOME/src/cuda/bfs/
-LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$RB_HOME/libLogHelper/build make generate GOLD=./golden_stdout.txt > golden_stderr.txt
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$RB_HOME/libLogHelper/build make generate GOLD=./golden.txt > golden_stdout.txt 2> golden_stderr.txt
+grep ERRORS: golden_stdout.txt > tmp.txt
+mv tmp.txt golden_stdout.txt
 cd $CWD
 
 ###############################################################################
