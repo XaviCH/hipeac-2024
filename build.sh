@@ -50,7 +50,7 @@ for TEST in $TESTS; do
 end
 
 # Extract test data
-cd $RADIATION_BENCHMARKS_DIR/data/bfs
+cd $RB_HOME/data/bfs
 tar -xvf graphs_rodinia.tar.gz
 
 

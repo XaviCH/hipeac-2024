@@ -71,7 +71,7 @@ cd $CWD
 ###############################################################################
 printf "\nStep 0 (4): Run and collect output without instrumentation\n"
 cd $RB_HOME/src/cuda/gemm/
-LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$RB_HOME/libLogHelper/build make generate DATADIR=. > golden_stdout.txt 2> golden_stderr.txt
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$RB_HOME/libLogHelper/build make generate DATADIR=. OUTPUTPREFIX=default.matrix > golden_stdout.txt 2> golden_stderr.txt
 grep -o 'DMR errors [0-9]*. Radiation errors: [0-9]*' golden_stdout.txt > tmp.txt
 mv tmp.txt golden_stdout.txt
 cd $CWD
