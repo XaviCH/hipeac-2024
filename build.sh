@@ -45,9 +45,8 @@ make
 TESTS=(bfs gemm)
 for TEST in $TESTS; do
     cd $RB_HOME/src/cuda/$TEST
+    cp $CWD/scripts/($TEST)/* .
     LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$RB_HOME/libLogHelper/build make LOGS=0 SMS=$SMS
-    cp $CWD/scripts/($TEST)_run.sh run.sh
-    cp $CWD/scripts/sdc_check.sh sdc_check.sh
 end
 
 # Extract test data
