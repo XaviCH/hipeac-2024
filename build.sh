@@ -42,7 +42,7 @@ make
 # cp libLogHelper.so libLogHelper.so.1.0.0 _log_helper.so ..
 
 # Setup test
-TESTS=(bfs)
+TESTS=(bfs gemm)
 for TEST in $TESTS; do
     cd $RB_HOME/src/cuda/$TEST
     LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$RB_HOME/libLogHelper/build make LOGS=0 SMS=$SMS
